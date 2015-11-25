@@ -13,3 +13,10 @@
 #wrapper svg{
 	background-color: #cacaca;
 }
+
+.state-info{
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}

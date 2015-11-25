@@ -17,8 +17,19 @@
 
 	<div id="wrapper" ng-controller="interactiveMapCntrl">
 		<svg width="730" height="500">
-			<g class="states" ng-repeat="state in states">
+			<g class="states" ng-repeat="state in states" click-state>
 				<path class="state {{state.stateColor}}" ng-attr-d="{{state.vector}}" stroke="white"></path>
+				<foreignObject class="state-name" ng-attr-x={{state.nameX}} ng-attr-y={{state.nameY}} width="20" height="30">
+
+					<body>
+						<div class="state-info">
+							{{state.abbr}}
+							<br />
+							{{state.electoralVotes}}
+						</div>
+					</body>
+
+				</foreignObject>
 			</g>
 		</svg>
 	</div>
