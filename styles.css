@@ -1,0 +1,15 @@
+.blue{
+	fill: blue;
+}
+
+.red{
+	fill: red;
+}
+
+.open{
+	fill: #c2b280;
+}
+
+#wrapper svg{
+	background-color: #cacaca;
+}

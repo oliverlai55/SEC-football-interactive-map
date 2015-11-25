@@ -9,14 +9,19 @@
 	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="angular-route.min.js"></script>
+	<script type="text/javascript" src="state-objects.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
-	<script type="text/javascript" src="state-object.js"></script>
+
 </head>
 <body>
 
-<div id="wrapper" ng-controller="interactiveMapCntrl">
-
-</div>
+	<div id="wrapper" ng-controller="interactiveMapCntrl">
+		<svg width="730" height="500">
+			<g class="states" ng-repeat="state in states">
+				<path class="state {{state.stateColor}}" ng-attr-d="{{state.vector}}" stroke="white"></path>
+			</g>
+		</svg>
+	</div>
 
 </body>
 </html>
