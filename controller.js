@@ -8,11 +8,14 @@ stateMap.directive('clickState', function(){
 			// console.log(iAttrs);
 		
 			element.bind('click', function(){
-				console.log($scope.state)
+				console.log($scope.state);
 				var newColor = "red";
+				//we are trying to fill the path tag, not g
 				var pathOfTheElement = element[0].querySelector('path')
 				console.log(pathOfTheElement);
 				pathOfTheElement.setAttribute('class',newColor);
+
+
 
 			});
 		}
