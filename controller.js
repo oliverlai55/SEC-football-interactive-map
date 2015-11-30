@@ -9,11 +9,11 @@ stateMap.directive('clickState', function(){
 		
 			element.bind('click', function(){
 				console.log($scope.state);
-				var newColor = "red";
+				var newColor = getNewColor($scope.state);
 				//we are trying to fill the path tag, not g
 				var pathOfTheElement = element[0].querySelector('path')
 				console.log(pathOfTheElement);
-				pathOfTheElement.setAttribute('class',newColor);
+				pathOfTheElement.setAttribute('class','state ' + newColor);
 
 
 
@@ -26,4 +26,19 @@ stateMap.directive('clickState', function(){
 
 function interactiveMapCntrl($scope){
 	$scope.states = states;
+}
+
+function getNewColor(state){
+	if(state.stateColor == 'red'){
+		state.stateColor = 'blue';
+		return "blue";
+	}else if(state.stateColor == 'blue'){
+		state.stateColor = "open";
+		return "open";
+	}else if(state.stateColor == 'open'){
+		state.stateColor = 'red';
+		return "red";
+	}else{
+		return console.log("error");
+	}
 }
