@@ -22,15 +22,18 @@ stateMap.directive('clickState', function(){
 	}
 });
 
-
-
 function interactiveMapCntrl($scope){
 	$scope.states = states;
+
 }
 
 function getNewColor(state){
 	if(state.stateColor == 'red'){
+		//add element to the appropriate array and remove it from the old
+		redStates.splice(state.id, 1)
+		blueStates[state.id] = state;
 		state.stateColor = 'blue';
+		console.log(redStates);
 		return "blue";
 	}else if(state.stateColor == 'blue'){
 		state.stateColor = "open";
